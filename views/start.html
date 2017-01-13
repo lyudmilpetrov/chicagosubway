@@ -1,0 +1,83 @@
+﻿<div ng-controller="appChicagoCtrl">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#chicagoHeader">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="chicagoHeader">
+                <div class="pull-right" ng-click="iconSoundChange()">
+                    <span class="glyphicon{{soundIcon}}" style="color:antiquewhite;font-size:25px"></span>
+                </div>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a><img src="../dist/images/ctaTranLog.png" class="img-rounded" width="20" height="20"></a></li>
+                    <li><a class="navbar-brand clock" style="font-size:14px;color:antiquewhite">Chicago</a></li>
+                    <li><a class="clock" style="color:antiquewhite;">{{theclock}} - {{thedate}}</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a class="navbar-brand clock" style="font-size:14px;color:antiquewhite" ng-show="online">Online</a></li>
+                    <li><a class="navbar-brand clock" style="font-size:14px;color:antiquewhite" ng-hide="online" tabindex="0">Offline</a></li>
+                </ul>
+                </div>
+        </div>
+     </nav>
+    <br />
+    <div class="btn-toolbar container-fluid" style="margin-right:15px; margin-left:15px; margin-top:70px;">
+        <div class="row">
+            <div id="small-img" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+                <ul class="list-unstyled list-inline text-center">
+                    <li ng-repeat="x in w.l">
+                        <figure id="{{x.i}}Line" ng-click="clickImage($event)" class="figure">
+                            <img id="{{x.i}}Img" src="/dist/images/{{x.i}}.png" class="figure-img img-fluid img-circle" width="{{unclickedImageDim}}" height="{{unclickedImageDim}}">
+                            <figcaption>
+                                   <a id="{{x.i}}Txt" style="color:antiquewhite;font-size:18px">
+                                    {{x.w}}
+                                </a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ui-select ng-model="lMBS.value" on-select="selectStart($item)">
+        <ui-select-match>
+            <span ng-bind="$select.selected.name"></span>
+        </ui-select-match>
+        <ui-select-choices repeat="b in (lMB | filter: $select.search) track by b.id">
+            <span ng-bind="b.name"></span>
+        </ui-select-choices>
+    </ui-select>
+    <br />
+    <ui-select ng-model="lMES.value" on-select="selectEnd($item)">
+        <ui-select-match>
+            <span ng-bind="$select.selected.name"></span>
+        </ui-select-match>
+        <ui-select-choices repeat="e in (lME | filter: $select.search) track by e.id">
+            <span ng-bind="e.name"></span>
+        </ui-select-choices>
+    </ui-select>
+    <br />
+    <div class="row" ng-hide="w.tt0">
+        <p id="gridTT0Message" style="color:antiquewhite;margin-left:15px;margin-right:15px; text-align:center">{{Table0Header}}</p>
+        <div id="gridTT0" style="color:black;margin-left:15px;margin-right:15px; height:200px" ui-grid="gridOpts0" class="grid" ui-grid-auto-resize></div>
+        <br />
+    </div>
+    <div class="row" ng-hide="w.tt1">
+        <p id="gridTT1Message" style="color:antiquewhite;margin-left:15px;margin-right:15px; text-align:center">{{Table1Header}}</p>
+        <div id="gridTT1" style="color:black;margin-left:15px;margin-right:15px; height:200px" ui-grid="gridOpts1" class="grid" ui-grid-auto-resize></div>
+        <br />
+    </div>
+    <div class="row" ng-hide="w.tt2">
+        <p id="gridTT2Message" style="color:antiquewhite;margin-left:15px;margin-right:15px; text-align:center">{{Table2Header}}</p>
+        <div id="gridTT2" style="color:black;margin-left:15px;margin-right:15px; height:200px" ui-grid="gridOpts2" class="grid" ui-grid-auto-resize></div>
+        <br />
+    </div>
+    <p id="messageStr" style="color:antiquewhite;margin-left:15px;margin-right:15px">
+            {{text}}
+        </p>
+        <br />
+    </div>

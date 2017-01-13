@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="appChicago">
+<head>
+    <meta charset="utf-8">
+    <title ng-controller="appChicagoCtrl">{{w.title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='description' content='Chicago trial for subway directions'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Lyudmil Petrov">
+    <meta name='mobile-web-app-capable' content='yes'>
+    <!-- AngularJS here -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.5.6/js/ngDialog.min.js"></script>
+    <!-- App -->
+    <script src="modules/initial.min.js"></script>
+    <script src="controllers/firstCtrl.min.js"></script>
+    <!-- Bootstrap and AngularJS core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.5.6/css/ngDialog.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.5.6/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Bootstrap references -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.3/angular-sanitize.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+    <!-- ui-select files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.16.1/select.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.16.1/select.min.css">
+    <!-- ui-grid -->
+    <link rel="styleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.1.1/ui-grid.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.1.1/ui-grid.min.js"></script>
+    <!-- audio -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-audio/1.7.2/angular.audio.min.js"></script>
+    <script src="swStarter.js"></script>
+</head>
+<body style="background-color:#6a6464">
+    <ng-view ng-cloak></ng-view>
+    <!-- load data -->
+    <script src="https://chicagodata.blob.core.windows.net/time/timetables.min.js"></script>
+    <script src="https://chicagodata.blob.core.windows.net/webworker/ng-webworker.min.js"></script>
+    <script src="https://chicagodata.blob.core.windows.net/webworker/worker_wrapper.min.js"></script>
+    <script src="chicagoCTAcash.js"></script>
+</body>
+</html>
+
