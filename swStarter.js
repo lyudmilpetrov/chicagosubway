@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/chicagoCTAcash.js', { scope: '/' })
+    navigator.serviceWorker.register('chicagoCTAcash.js', { scope: '/' })
       .then(function (registration) {
           console.log('Service Worker Registered');
       });
