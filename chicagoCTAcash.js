@@ -2,7 +2,6 @@ self.addEventListener('install', e => {
     e.waitUntil(
       caches.open('chicagoCTAcash').then(cache => {
           return cache.addAll([
-            '/',
             'index.html',
             'favicon.ico',
             'swStarter.js',
